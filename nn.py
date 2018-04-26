@@ -27,7 +27,7 @@ def train_data(train_labels, train_samples):
   ])
 
   model.compile(Adam(lr=.0001), loss='sparse_categorical_crossentropy', metrics=['accuracy'])
-  model.fit(train_samples, train_labels, batch_size=10, epochs=100, shuffle=True, verbose=2)
+  model.fit(train_samples, train_labels, validation_split=0.1, batch_size=10, epochs=100, shuffle=True, verbose=2)
 
 
 if __name__ == "__main__":
